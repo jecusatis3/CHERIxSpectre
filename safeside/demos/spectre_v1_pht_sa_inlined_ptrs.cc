@@ -34,7 +34,7 @@
 size_t LoadFromPointer(void* address){
   size_t c = (size_t)address;
   size_t d = 0;
-  __asm__ volatile ( "ldr %0, [%1]\n\t" :"=r"(d) :"r" (c) : "r1") ;
+  __asm__ volatile ( "ldr %0, [%1]\n\t" :"=r"(d) :"r" (c) : "memory") ;
   return d;
 }
 
@@ -42,7 +42,7 @@ size_t LoadFromPointer(void* address){
 char LoadFromArray(const char* address, size_t offset){
   size_t c = (size_t)address + offset;
   char d = 0;
-  __asm__ volatile ( "ldr %0, [%1]\n\t" :"=r"(d) :"r" (c) : "r1") ;
+  __asm__ volatile ( "ldr %0, [%1]\n\t" :"=r"(d) :"r" (c) : "memory") ;
   return d;
 }
 
