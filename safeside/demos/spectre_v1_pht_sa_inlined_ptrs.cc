@@ -31,6 +31,11 @@
 
 //these are also not general at all, but they work for their specific uses
 //could be made better but work to show what happens if pointers are used for size or public data
+
+//sources for inline loads:
+//https://forum.arduino.cc/t/referencing-a-pointer-in-inline-assembly/326531
+//http://www.ethernut.de/en/documents/arm-inline-asm.html
+
 size_t LoadFromPointer(void* address){
   size_t c = (size_t)address;
   size_t d = 0;
